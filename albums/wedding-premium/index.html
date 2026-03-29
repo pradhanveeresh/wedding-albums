@@ -10,24 +10,48 @@
   <div class="page-shell">
     <header class="topbar">
       <div class="brand">Wedding Premium</div>
-      <div class="status">Premium Album Preview</div>
+      <div class="top-actions">
+        <button class="ghost-btn" id="prevBtn">‹</button>
+        <button class="ghost-btn" id="nextBtn">›</button>
+      </div>
     </header>
 
     <main class="viewer-stage">
-      <section class="album-frame">
-        <div class="album-shadow"></div>
-        <div class="album-cover">
-          <div class="spine"></div>
-          <div class="cover-face">
-            <div class="cover-title">Wedding Album</div>
-            <div class="cover-subtitle">FlipHTML5-style premium build</div>
+      <section class="album-stage">
+        <div class="album-floor-shadow"></div>
+
+        <div class="album-book">
+          <div class="book-depth"></div>
+
+          <div class="spread">
+            <div class="page left-page">
+              <div class="page-inner">
+                <div class="page-label">LEFT PAGE</div>
+                <div class="page-content">
+                  Safe margin zone<br />
+                  Future PDF page fit here
+                </div>
+              </div>
+            </div>
+
+            <div class="gutter"></div>
+
+            <div class="page right-page">
+              <div class="page-inner">
+                <div class="page-label">RIGHT PAGE</div>
+                <div class="page-content">
+                  Safe margin zone<br />
+                  Future PDF page fit here
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <div class="helper-note">
-        Premium shell ready.<br />
-        Next step: real PDF pages + realistic flipbook engine.
+        Open-book premium shell ready.<br />
+        Next: real PDF pages + realistic controlled page turn.
       </div>
     </main>
   </div>
