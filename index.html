@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wedding Albums</title>
   <style>
-    body {
-      margin: 0;
-      background: #111;
-      color: #fff;
+    body{
+      margin:0;
       font-family: Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
+      background:#111;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
     }
-    .box {
-      max-width: 700px;
-      background: #1b1b1b;
-      border: 1px solid #333;
-      border-radius: 16px;
-      padding: 24px;
+    .wrap{
+      width:min(900px, 92vw);
     }
-    a {
-      color: #ffb3c1;
-      text-decoration: none;
+    h1{
+      margin-bottom:24px;
+      font-size:32px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+    }
+    .card{
+      display:block;
+      text-decoration:none;
+      color:#fff;
+      background:#1c1c1c;
+      border:1px solid #333;
+      border-radius:18px;
+      padding:20px;
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:#666;
+    }
+    .title{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    .sub{
+      font-size:14px;
+      color:#bbb;
     }
   </style>
 </head>
 <body>
-  <div class="box">
+  <div class="wrap">
     <h1>Wedding Albums</h1>
-    <p>Root page ready.</p>
-    <p>First album path:</p>
-    <p><a href="./albums/demo-album/">./albums/demo-album/</a></p>
+
+    <div class="grid">
+      <a class="card" href="./albums/demo-album/">
+        <div class="title">Demo Album</div>
+        <div class="sub">Old test album (safe backup)</div>
+      </a>
+
+      <a class="card" href="./albums/wedding-premium/">
+        <div class="title">Wedding Premium</div>
+        <div class="sub">New FlipHTML5-style premium album</div>
+      </a>
+    </div>
   </div>
 </body>
 </html>
