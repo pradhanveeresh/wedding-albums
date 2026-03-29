@@ -1,0 +1,19 @@
+{
+  "title": "Demo Album",
+  "slug": "demo-album",
+  "couple": "Demo Couple",
+  "themeColor": "#7a0f1d",
+  "background": "#111111",
+  "pageAspectRatio": "landscape",
+  "pageWidth": 1600,
+  "pageHeight": 1100,
+  "cover": {
+    "front": "../cover/front.jpg",
+    "back": "../cover/back.jpg"
+  },
+  "music": {
+    "enabled": false,
+    "file": "../optional/music.mp3"
+  },
+  "pages": []
+}
