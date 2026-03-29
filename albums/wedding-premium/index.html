@@ -3,59 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wedding Premium</title>
-  <link rel="stylesheet" href="./style.css" />
+  <title>Wedding Premium Album</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-  <div class="page-shell">
+  <div class="app-shell">
+    <div class="ambient-glow"></div>
+
     <header class="topbar">
-      <div class="brand">Wedding Premium</div>
-      <div class="top-actions">
-        <button class="ghost-btn" id="prevBtn">‹</button>
-        <button class="ghost-btn" id="nextBtn">›</button>
+      <a class="back-btn" href="../../">←</a>
+      <div class="album-title-wrap">
+        <div class="album-title">Wedding Premium</div>
+        <div class="album-subtitle">Premium Digital Album</div>
       </div>
+      <div class="topbar-spacer"></div>
     </header>
 
     <main class="viewer-stage">
-      <section class="album-stage">
-        <div class="album-floor-shadow"></div>
+      <div class="book-outer">
+        <div class="book-shadow"></div>
 
-        <div class="album-book">
-          <div class="book-depth"></div>
+        <div class="book-shell">
+          <div class="book-cover-left"></div>
+          <div class="book-cover-right"></div>
+          <div class="book-spine"></div>
 
           <div class="spread">
-            <div class="page left-page">
-              <div class="page-inner">
-                <div class="page-label">LEFT PAGE</div>
-                <div class="page-content">
-                  Safe margin zone<br />
-                  Future PDF page fit here
-                </div>
+            <section class="page page-left">
+              <div class="page-safe">
+                <canvas id="leftCanvas"></canvas>
+                <div class="page-placeholder" id="leftPlaceholder">Loading left page...</div>
               </div>
-            </div>
+            </section>
 
-            <div class="gutter"></div>
-
-            <div class="page right-page">
-              <div class="page-inner">
-                <div class="page-label">RIGHT PAGE</div>
-                <div class="page-content">
-                  Safe margin zone<br />
-                  Future PDF page fit here
-                </div>
+            <section class="page page-right">
+              <div class="page-safe">
+                <canvas id="rightCanvas"></canvas>
+                <div class="page-placeholder" id="rightPlaceholder">Loading right page...</div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
-      </section>
-
-      <div class="helper-note">
-        Open-book premium shell ready.<br />
-        Next: real PDF pages + realistic controlled page turn.
       </div>
     </main>
+
+    <div class="controls-wrap">
+      <div class="controls">
+        <button class="ctrl-btn" id="prevBtn" title="Previous">‹</button>
+        <button class="ctrl-btn" id="zoomOutBtn" title="Zoom Out">－</button>
+        <div class="page-indicator" id="pageIndicator">Pages 1–2</div>
+        <button class="ctrl-btn" id="zoomInBtn" title="Zoom In">＋</button>
+        <button class="ctrl-btn" id="nextBtn" title="Next">›</button>
+        <button class="ctrl-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+      </div>
+    </div>
+
+    <div class="status-line" id="statusLine">Ready</div>
   </div>
 
-  <script src="./app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.js';
+    }
+  </script>
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>
